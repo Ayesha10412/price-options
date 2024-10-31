@@ -18,7 +18,7 @@ const [open, setOpen] =useState(false)
 
     return (
       
-<nav className="flex ">
+<nav className="text-black  ">
 <div className="md:hidden" onClick={()=>setOpen(!open)}>
     {
         open === true? <IoMdClose className="text-xl md:hidden"></IoMdClose>: <AiOutlineMenu className="text-xl md:hidden"></AiOutlineMenu>
@@ -27,7 +27,9 @@ const [open, setOpen] =useState(false)
 
 </div>
 
-<ul className='md:flex '>
+<ul className= {`md:flex absolute duration-1000 md:static
+    ${open? 'top-16': '-top-60'}
+    bg-yellow-300 px-6`} >
 {
     routes.map(route => 
     <Link key={route.id} route={route} ></Link>
